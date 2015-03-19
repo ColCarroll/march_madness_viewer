@@ -1,6 +1,6 @@
 var viewerApp = angular.module("viewerApp", []);
 
-viewerApp.controller("mainCtrl", function($scope) {
+viewerApp.controller("mainCtrl", function($scope, $http) {
     $scope.entry = "";
     $scope.entryPossibilities = [];
     $scope.teamOne = "";
@@ -9,9 +9,8 @@ viewerApp.controller("mainCtrl", function($scope) {
 
     var seeds = [];
     var allTeams = [];
-    d3.json('static/assets/preds.json', function (error, json) {
-        if (error) return console.warn(error);
-        seeds = json["seeds"];
+    $http.get('static/assets/preds.json').then(function (res) {
+        seeds = res.data["seeds"];
         var u = {},
             team = "";
 
