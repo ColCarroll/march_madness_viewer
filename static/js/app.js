@@ -5,7 +5,7 @@ viewerApp.controller("mainCtrl", function($scope) {
     $scope.entryPossibilities = [];
     $scope.teamOne = "";
     $scope.teamTwo = "";
-    $scope.message = "";
+    $scope.message = "Predictions will appear here after you choose two teams.";
 
     var seeds = [];
     var allTeams = [];
@@ -34,10 +34,10 @@ viewerApp.controller("mainCtrl", function($scope) {
 
     $scope.updateChoices = function () {
         $scope.entryPossibilities = [];
-        if ($scope.entry.length > 0) {
+        if ($scope.entry.length > 0){
             for (var i = 0; i < allTeams.length; i++) {
                 var team = allTeams[i];
-                if (team.toLowerCase().indexOf($scope.entry) > -1 && $scope.teamOne !== team && $scope.teamTwo !== team) {
+                if (team.toLowerCase().indexOf($scope.entry.toLowerCase()) > -1 && $scope.teamOne !== team && $scope.teamTwo !== team) {
                     $scope.entryPossibilities.push(team);
                 }
             }
