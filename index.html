@@ -24,7 +24,7 @@
 </div>
 <div class="container">
     <div class="col-md-2">
-        <label for="teamEntry">Choose a team:</label>
+        <label for="teamEntry">Choose two teams:</label>
         <input id="teamEntry" type="text" ng-model="entry" class="form-control" ng-change="updateChoices()">
         <div class="btn-group-vertical">
             <button ng-repeat="choice in entryPossibilities" class="btn btn-primary" ng-click="addTeam(choice)">{{choice}}</button>

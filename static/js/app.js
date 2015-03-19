@@ -65,7 +65,7 @@ viewerApp.controller("mainCtrl", function($scope) {
     };
 
     $scope.updateProbabilities = function () {
-        $scope.message = "";
+        $scope.message = "Predictions will appear here after you choose two teams.";
         if ($scope.teamOne.length > 0 && $scope.teamTwo.length > 0) {
             for (var i = 0; i < seeds.length; i++) {
                 var gameData = seeds[i];
@@ -75,7 +75,7 @@ viewerApp.controller("mainCtrl", function($scope) {
                         var winner = "";
                         var loser = "";
                         var prefix = "";
-                        var suffix = "";
+                        var suffix = ".";
                         if(pred > 50) {
                             winner = gameData["team_one"];
                             loser = gameData["team_two"];
