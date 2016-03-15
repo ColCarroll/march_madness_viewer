@@ -83,11 +83,11 @@ viewerApp.controller("mainCtrl", function($scope, $http) {
                             loser = gameData["team_one"];
                             pred = 100 - pred;
                         }
-                        if(winner == "(1) Duke"){
+                        if(winner == "(4) Duke"){
                             prefix = "Unfortunately, ";
-                        } else if (winner === "(4) North Carolina") {
+                        } else if (winner === "(1) North Carolina") {
                             suffix = ". Go Heels!";
-                        } else if (winner === "(3) Notre Dame") {
+                        } else if (winner === "(6) Notre Dame") {
                             suffix = ". Go Irish!";
                         }
                         $scope.message = prefix + winner + " has a " + pred.toFixed(1) + "% chance of beating " + loser + suffix
